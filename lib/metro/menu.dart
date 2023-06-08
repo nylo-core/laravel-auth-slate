@@ -1,5 +1,5 @@
 const String metroMenu = """
-Metro - Publish files to your Nylo project by Anthony Gordon
+Metro - Publish files to your Nylo project
 
 Usage: 
     command [options] [arguments]
