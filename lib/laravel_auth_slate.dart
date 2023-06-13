@@ -1,5 +1,8 @@
 library laravel_auth_slate;
 
+import 'package:laravel_auth_slate/stubs/auth_landing_stub.dart';
+
+import '/stubs/laravel_auth_response.dart';
 import '/stubs/auth_user_stub.dart';
 import '/stubs/dashboard_stub.dart';
 import '/stubs/laravel_api_service.dart';
@@ -24,59 +27,70 @@ import 'package:nylo_support/metro/models/ny_template.dart';
 */
 
 List<NyTemplate> run() => [
-      /// AUTH USER
+      /// MODELS
       NyTemplate(
         name: "auth_user",
         saveTo: modelsFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubAuthUser(),
       ),
 
-      /// LOGIN
+      NyTemplate(
+        name: "laravel_auth_response",
+        saveTo: modelsFolder,
+        pluginsRequired: ["nylo_framework"],
+        stub: stubLaravelAuthResponseModel(),
+      ),
+
+      /// PAGES
+      NyTemplate(
+        name: "auth_landing_page",
+        saveTo: pagesFolder,
+        pluginsRequired: ["nylo_framework"],
+        stub: stubAuthLanding(),
+      ),
+
       NyTemplate(
         name: "login_page",
         saveTo: pagesFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubLogin(),
       ),
 
-      /// REGISTER
       NyTemplate(
         name: "register_page",
         saveTo: pagesFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubRegister(),
       ),
 
-      /// DASHBOARD
       NyTemplate(
         name: "dashboard_page",
         saveTo: pagesFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubDashboard(),
       ),
 
-      /// API SERVICE LOGIN
+      /// API SERVICES
       NyTemplate(
         name: "laravel_auth_api_service",
         saveTo: networkingFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubLaravelAuthApiService(),
       ),
 
-      /// API SERVICE GENERAL
       NyTemplate(
         name: "laravel_api_service",
         saveTo: networkingFolder,
-        pluginsRequired: [],
+        pluginsRequired: ["nylo_framework"],
         stub: stubLaravelApiService(),
       ),
 
-      /// EVENT
+      /// EVENTS
       NyTemplate(
         name: "laravel_auth_event",
-        saveTo: networkingFolder,
-        pluginsRequired: [],
+        saveTo: eventsFolder,
+        pluginsRequired: ["nylo_framework"],
         stub: stubLaravelAuthEvent(),
       ),
 

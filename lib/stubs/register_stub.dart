@@ -1,5 +1,7 @@
 String stubRegister() => '''
-import '/app/models/auth_response.dart';
+import 'package:flutter_app/bootstrap/extensions.dart';
+
+import '/app/models/laravel_auth_response.dart';
 import '/app/events/laravel_auth_event.dart';
 import '/app/networking/laravel_auth_api_service.dart';
 import '/bootstrap/helpers.dart';
@@ -32,17 +34,21 @@ class _RegisterPageState extends NyState<RegisterPage> {
     String email = _controllerEmailField.text,
         password = _controllerPasswordField.text;
 
-    await validate(rules: {
+    await lockRelease('register', perform: () async {
+
+      await validate(rules: {
       "email": "email",
-      "password": "^(?=.*\d).{4,8}\$"
+      "password": "(?=.*d).{4,12}"
     }, data: {
       "email": email,
       "password": password
     }, onSuccess: () async {
-      await lockRelease('login', perform: () async {
         LaravelAuthResponse? laravelAuthResponse = await api<LaravelAuthApiService>((request) => request.register(email, password));
-
-        event<LaravelAuthEvent>(data: {"user": laravelAuthResponse});
+        if (laravelAuthResponse?.status != 200) {
+          showToastOops(description: laravelAuthResponse?.message ?? "");
+          return;
+        }
+        await event<LaravelAuthEvent>(data: {"user": laravelAuthResponse});
       });
     });
   }
@@ -57,7 +63,6 @@ class _RegisterPageState extends NyState<RegisterPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: "38b48b".toHexColor(),
         title: Text("Register"),
       ),
       body: SafeArea(
@@ -87,7 +92,7 @@ class _RegisterPageState extends NyState<RegisterPage> {
                   enableSuggestions: false,
                   keyboardType: TextInputType.emailAddress,
                   obscureText: false,
-                  dummyData: "admin@matesbet.com",
+                  dummyData: "user@gmail.com",
                 ),
                 NyTextField(
                   controller: _controllerPasswordField,
@@ -99,7 +104,10 @@ class _RegisterPageState extends NyState<RegisterPage> {
                   margin: EdgeInsets.only(top: 15),
                   width: double.infinity,
                   child: MaterialButton(
-                    child: Text((isLocked('login') ? "Processing" : "Register")),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                    padding: EdgeInsets.symmetric(vertical: 8),
+                    color: ThemeColor.get(context).buttonBackground,
+                    child: Text((isLocked('register') ? "Processing" : "Register")).bodyLarge(context).setColor(context, (color) => Colors.white),
                     onPressed: _registerUser,
                   ),
                 ),

@@ -1,6 +1,6 @@
 String stubLaravelAuthApiService() => '''
 import 'package:flutter/material.dart';
-import '/app/models/auth_response.dart';
+import '/app/models/laravel_auth_response.dart';
 import '/app/networking/dio/base_api_service.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 

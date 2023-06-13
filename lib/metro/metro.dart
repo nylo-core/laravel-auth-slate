@@ -17,34 +17,6 @@ List<NyCommand> allCommands = [
   ),
 ];
 
-// Future<void> commands(List<String> arguments) async {
-//   if (arguments.isEmpty) {
-//     MetroConsole.writeInBlack(metroMenu);
-//     return;
-//   }
-//
-//   List<String> argumentSplit = arguments[0].split(":");
-//
-//   if (argumentSplit.isEmpty || argumentSplit.length <= 1) {
-//     MetroConsole.writeInBlack('Invalid arguments ${arguments.toString()}');
-//     exit(2);
-//   }
-//
-//   String type = argumentSplit[0];
-//   String action = argumentSplit[1];
-//
-//   NyCommand? nyCommand = _allCommands.firstWhereOrNull(
-//       (command) => type == command.category && command.name == action);
-//
-//   if (nyCommand == null) {
-//     MetroConsole.writeInBlack('Invalid arguments ${arguments.toString()}');
-//     exit(1);
-//   }
-//
-//   arguments.removeAt(0);
-//   await nyCommand.action!(arguments);
-// }
-
 _publishAll(List<String> arguments) async {
   parser.addFlag(helpFlag,
       abbr: 'h',

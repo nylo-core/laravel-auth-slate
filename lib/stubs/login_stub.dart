@@ -1,6 +1,7 @@
 String stubLogin() => '''
+import '/bootstrap/extensions.dart';
 import '/app/events/laravel_auth_event.dart';
-import '/app/models/auth_response.dart';
+import '/app/models/laravel_auth_response.dart';
 import '/app/networking/laravel_auth_api_service.dart';
 import '/bootstrap/helpers.dart';
 import '/app/controllers/controller.dart';
@@ -32,15 +33,20 @@ class _LoginPageState extends NyState<LoginPage> {
     String email = _controllerEmailField.text,
         password = _controllerPasswordField.text;
 
-    await validate(rules: {
+    await lockRelease('login', perform: () async {
+
+      await validate(rules: {
       "email": "email",
-      "password": "regex:^.{4,12}\$"
+      "password": "regex:(?=.*d).{4,12}"
     }, data: {
       "email": email,
       "password": password
     }, onSuccess: () async {
-      await lockRelease('login', perform: () async {
         LaravelAuthResponse? laravelAuthResponse = await api<LaravelAuthApiService>((request) => request.login(email, password), context: context);
+        if (laravelAuthResponse?.status != 200) {
+          showToastOops(description: laravelAuthResponse?.message ?? "");
+          return;
+        }
         event<LaravelAuthEvent>(data: {"user": laravelAuthResponse});
       });
     });
@@ -56,7 +62,6 @@ class _LoginPageState extends NyState<LoginPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: "38b48b".toHexColor(),
         title: Text("Login", style: TextStyle(color: Colors.white),),
       ),
       body: SafeArea(
@@ -86,7 +91,7 @@ class _LoginPageState extends NyState<LoginPage> {
                   enableSuggestions: false,
                   keyboardType: TextInputType.emailAddress,
                   obscureText: false,
-                  dummyData: "admin@matesbet.com",
+                  dummyData: "user@gmail.com",
                   validationRules: "email",
                 ),
                 NyTextField(
@@ -94,15 +99,17 @@ class _LoginPageState extends NyState<LoginPage> {
                   labelText: "PASSWORD",
                   obscureText: true,
                   dummyData: "password",
-                  validationRules: "regex:^.{4,12}\$",
-                  validationErrorMessage: "Must be 4 and 12 digits long",
+                  validationRules: "regex:(?=.*d).{4,12}",
+                  validationErrorMessage: "4 and 12 characters with one number",
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 15),
                   width: double.infinity,
                   child: MaterialButton(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                    padding: EdgeInsets.symmetric(vertical: 8),
                     color: ThemeColor.get(context).buttonBackground,
-                    child: Text((isLocked('login') ? "Processing" : "Login"), style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                    child: Text((isLocked('login') ? "Processing" : "Login")).bodyLarge(context).setColor(context, (color) => Colors.white),
                     onPressed: _loginUser,
                   ),
                 ),

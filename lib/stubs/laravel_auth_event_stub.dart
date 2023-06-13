@@ -1,5 +1,5 @@
 String stubLaravelAuthEvent() => '''
-import '/app/models/auth_response.dart';
+import '/app/models/laravel_auth_response.dart';
 import '/resources/pages/dashboard_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 

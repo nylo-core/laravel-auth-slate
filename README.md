@@ -21,6 +21,7 @@ dependencies:
   - RegisterPage
   - LandingPage
   - DashboardPage
+  - AuthLandingPage
 - Events
   - LaravelAuthEvent
 - Networking
@@ -28,6 +29,7 @@ dependencies:
   - LaravelAuthService
 - Models
   - AuthUser
+  - AuthResponse
 
 ## Usage
 
