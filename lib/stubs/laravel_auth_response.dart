@@ -6,7 +6,8 @@ import 'package:nylo_framework/nylo_framework.dart';
 class LaravelAuthResponse extends Model {
   LaravelAuthResponse();
 
-  String? token, status, message;
+  String? token, message;
+  int? status;
 
   LaravelAuthResponse.fromJson(data) {
     status = data['status'];
@@ -22,4 +23,5 @@ class LaravelAuthResponse extends Model {
     "token": token
   };
 }
+
 ''';
