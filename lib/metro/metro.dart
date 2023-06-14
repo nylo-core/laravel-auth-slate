@@ -1,4 +1,5 @@
 library metro;
+
 import 'package:args/args.dart';
 import 'package:nylo_support/metro/constants/strings.dart';
 import 'package:nylo_support/metro/metro_service.dart';
@@ -9,11 +10,11 @@ import '/laravel_auth_slate.dart';
 final ArgParser parser = ArgParser(allowTrailingOptions: true);
 List<NyCommand> allCommands = [
   NyCommand(
-      name: "all",
-      options: 1,
-      arguments: ["-h", "-f"],
-      category: "publish",
-      action: _publishAll,
+    name: "all",
+    options: 1,
+    arguments: ["-h", "-f"],
+    category: "publish",
+    action: _publishAll,
   ),
 ];
 
