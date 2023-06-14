@@ -75,11 +75,11 @@ class _RegisterPageState extends NyState<RegisterPage> {
               margin: EdgeInsets.symmetric(vertical: 40),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color: Colors.grey[50],
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.shade300,
+                        color: Colors.grey.shade200,
                         spreadRadius: 1,
                         blurRadius: 15
                     )
