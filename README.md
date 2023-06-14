@@ -8,7 +8,7 @@ In your flutter project add the dependency:
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^0.0.1
+  laravel_auth_slate: ^0.0.2
 ```
 
 ## Requirements
