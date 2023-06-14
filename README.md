@@ -1,6 +1,6 @@
 # Laravel Auth Slate
 
-Scaffolds Laravel authentication files in your Nylo project.
+Scaffolds Laravel authentication files in your [Nylo](https://nylo.dev) project.
 
 ### Getting Started
 In your flutter project add the dependency:
