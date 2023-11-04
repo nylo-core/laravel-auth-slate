@@ -8,7 +8,21 @@ In your flutter project add the dependency:
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^0.0.2
+  laravel_auth_slate: ^0.1.0
+```
+
+``` bash
+flutter pub add laravel_auth_slate
+```
+
+## Usage
+
+Run the below command in your project.
+
+``` bash
+dart run laravel_auth_slate:main publish:all
+// with metro
+metro publish:slate laravel_auth_slate
 ```
 
 ## Requirements
@@ -30,14 +44,6 @@ dependencies:
 - Models
   - AuthUser
   - AuthResponse
-
-## Usage
-
-Run the below command in your project.
-
-``` bash
-dart run laravel_auth_slate:main publish:all
-```
 
 ## Changelog
 Please see [CHANGELOG](https://github.com/nylo-core/nylo-core/laravel-auth-slate/CHANGELOG.md) for more information what has changed recently.

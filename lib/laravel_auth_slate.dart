@@ -99,7 +99,7 @@ List<NyTemplate> run() => [
 
 /*
 |--------------------------------------------------------------------------
-| Reference - saveTo Accepted Folders
+| Directory Reference
 |
 | controllersFolder = 'lib/app/controllers';
 | widgetsFolder = 'lib/resources/widgets';

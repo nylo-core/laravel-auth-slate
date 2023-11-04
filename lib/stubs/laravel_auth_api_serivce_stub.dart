@@ -4,7 +4,6 @@ import '/app/models/laravel_auth_response.dart';
 import '/app/networking/dio/base_api_service.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-
 class LaravelAuthApiService extends BaseApiService {
   LaravelAuthApiService({BuildContext? buildContext}) : super(buildContext);
 
@@ -28,7 +27,7 @@ class LaravelAuthApiService extends BaseApiService {
   );
 
   @override
-  displayError(DioError dioError, BuildContext context) {
+  displayError(DioException dioError, BuildContext context) {
     dioError.message.dump();
   }
 }
