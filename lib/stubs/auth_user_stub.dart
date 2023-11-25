@@ -1,6 +1,8 @@
 String stubAuthUser() => '''
 import 'package:nylo_framework/nylo_framework.dart';
 
+/// AuthUser Model.
+
 class AuthUser extends Model {
   int? id;
   String? email;

@@ -1,26 +1,25 @@
-String stubRegister() => '''
-import '/app/controllers/register_controller.dart';
-import '/bootstrap/extensions.dart';
-import '/resources/pages/login_page.dart';
-import '/resources/widgets/logo_widget.dart';
-import '/bootstrap/helpers.dart';
+String stubForgotPassword() => '''
 import 'package:flutter/material.dart';
+import '/bootstrap/extensions.dart';
+import '/bootstrap/helpers.dart';
+import '/resources/widgets/logo_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
+import '/app/controllers/forgot_password_controller.dart';
 
-class RegisterPage extends NyStatefulWidget<RegisterController> {
-  static const path = '/register';
+class ForgotPasswordPage extends NyStatefulWidget<ForgotPasswordController> {
+  static const path = '/forgot-password';
 
-  RegisterPage() : super(path, child: _RegisterPageState());
+  ForgotPasswordPage() : super(path, child: _ForgotPasswordPageState());
 }
 
-class _RegisterPageState extends NyState<RegisterPage> {
+class _ForgotPasswordPageState extends NyState<ForgotPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("Register"),
+        title: Text("Forgot Password"),
       ),
       body: SafeArea(
         minimum: EdgeInsets.all(16),
@@ -46,22 +45,13 @@ class _RegisterPageState extends NyState<RegisterPage> {
                 ),
                 child: Column(children: <Widget>[
                   NyTextField(
-                    controller: widget.controller.textFieldEmail,
+                    controller: widget.controller.textEmailForgotPassword,
                     labelText: "EMAIL",
                     enableSuggestions: false,
                     autoFocus: true,
                     keyboardType: TextInputType.emailAddress,
                     obscureText: false,
                     dummyData: "user@gmail.com",
-                  ),
-                  NyTextField(
-                    controller: widget.controller.textFieldPassword,
-                    labelText: "PASSWORD",
-                    obscureText: true,
-                    dummyData: "password",
-                    onSubmitted: (String value) {
-                      widget.controller.register();
-                    },
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 15),
@@ -70,15 +60,12 @@ class _RegisterPageState extends NyState<RegisterPage> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                       padding: EdgeInsets.symmetric(vertical: 8),
                       color: ThemeColor.get(context).buttonBackground,
-                      child: Text((isLocked('register') ? "Processing" : "Register")).bodyLarge(context).setColor(context, (color) => Colors.white),
-                      onPressed: widget.controller.register,
+                      child: Text((isLocked('forgot_password') ? "Processing" : "Forgot Password")).bodyLarge(context).setColor(context, (color) => Colors.white),
+                      onPressed: widget.controller.forgotPassword,
                     ),
                   ),
                 ]),
               ),
-              InkWell(onTap: () {
-                routeTo(LoginPage.path);
-              }, child: Text("Already have an account? Login", textAlign: TextAlign.center,),)
             ],
           ),
         ),

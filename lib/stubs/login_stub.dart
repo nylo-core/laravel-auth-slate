@@ -1,61 +1,17 @@
 String stubLogin() => '''
+import '/app/controllers/login_controller.dart';
 import '/bootstrap/extensions.dart';
-import '/app/events/laravel_auth_event.dart';
-import '/app/models/laravel_auth_response.dart';
-import '/app/networking/laravel_auth_api_service.dart';
 import '/bootstrap/helpers.dart';
-import '/app/controllers/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-class LoginPage extends NyStatefulWidget {
-  final Controller controller = Controller();
-  
+class LoginPage extends NyStatefulWidget<LoginController> {
   static const path = '/login';
-  
-  LoginPage({Key? key}) : super(key: key);
-  
-  @override
-  _LoginPageState createState() => _LoginPageState();
+
+  LoginPage() : super(path, child: _LoginPageState());
 }
 
 class _LoginPageState extends NyState<LoginPage> {
-
-  final TextEditingController _controllerEmailField = TextEditingController(),
-      _controllerPasswordField = TextEditingController();
-
-  @override
-  init() async {
-    super.init();
-  }
-
-  _loginUser() async {
-    String email = _controllerEmailField.text,
-        password = _controllerPasswordField.text;
-
-    await lockRelease('login', perform: () async {
-
-      await validate(rules: {
-      "email": "email",
-      "password": "regex:(?=.*d).{4,12}"
-    }, data: {
-      "email": email,
-      "password": password
-    }, onSuccess: () async {
-        LaravelAuthResponse? laravelAuthResponse = await api<LaravelAuthApiService>((request) => request.login(email, password), context: context);
-        if (laravelAuthResponse?.status != 200) {
-          showToastOops(description: laravelAuthResponse?.message ?? "");
-          return;
-        }
-        event<LaravelAuthEvent>(data: {"user": laravelAuthResponse});
-      });
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +24,7 @@ class _LoginPageState extends NyState<LoginPage> {
         minimum: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -86,16 +42,16 @@ class _LoginPageState extends NyState<LoginPage> {
               margin: EdgeInsets.symmetric(vertical: 8),
               child: Column(children: <Widget>[
                 NyTextField(
-                  controller: _controllerEmailField,
+                  controller: widget.controller.textFieldEmail,
                   labelText: "EMAIL",
                   enableSuggestions: false,
                   keyboardType: TextInputType.emailAddress,
                   obscureText: false,
-                  dummyData: "user@gmail.com",
+                  dummyData: "bechtelar.keshawn@example.net",
                   validationRules: "email",
                 ),
                 NyTextField(
-                  controller: _controllerPasswordField,
+                  controller: widget.controller.textFieldPassword,
                   labelText: "PASSWORD",
                   obscureText: true,
                   dummyData: "password",
@@ -110,11 +66,12 @@ class _LoginPageState extends NyState<LoginPage> {
                     padding: EdgeInsets.symmetric(vertical: 8),
                     color: ThemeColor.get(context).buttonBackground,
                     child: Text((isLocked('login') ? "Processing" : "Login")).bodyLarge(context).setColor(context, (color) => Colors.white),
-                    onPressed: _loginUser,
+                    onPressed: widget.controller.login,
                   ),
                 ),
               ]),
             ),
+            InkWell(onTap: widget.controller.showForgotPassword, child: Text("Forgot your password?"),)
           ],
         ),
       ),

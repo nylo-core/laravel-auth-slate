@@ -1,19 +1,29 @@
 String stubLaravelApiService() => '''
 import 'package:flutter/material.dart';
+import '/config/decoders.dart';
 import '/app/models/laravel_auth_response.dart';
 import '/app/models/auth_user.dart';
-import '/app/networking/dio/base_api_service.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-class LaravelApiService extends BaseApiService {
-  LaravelApiService({BuildContext? buildContext}) : super(buildContext);
+/*
+|--------------------------------------------------------------------------
+| LaravelApiService
+| -------------------------------------------------------------------------
+| API Service for your authenticated users
+| Ensure you have installed this package https://github.com/nylo-core/laravel-nylo-auth
+|
+| Learn more https://nylo.dev/docs/5.x/networking
+|--------------------------------------------------------------------------
+*/
+class LaravelApiService extends NyApiService {
+  LaravelApiService({BuildContext? buildContext}) : super(buildContext, decoders: modelDecoders);
 
   @override
-  String get baseUrl => '\${getEnv('API_BASE_URL')}/app/v1';
+  String get baseUrl => '\${getEnv('APP_URL')}/app/v1';
 
   String get bearerToken => Auth.user<LaravelAuthResponse>()?.token ?? "";
 
-  /// Example fetching the user
+  /// Fetch auth users information
   Future<AuthUser?> user() async {
     return await network<AuthUser>(
         request: (request) => request.get("/user"),

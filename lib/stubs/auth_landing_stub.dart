@@ -4,32 +4,15 @@ import '/resources/widgets/logo_widget.dart';
 import '/bootstrap/extensions.dart';
 import '/resources/pages/login_page.dart';
 import '/resources/pages/register_page.dart';
-import '/app/controllers/controller.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class AuthLandingPage extends NyStatefulWidget {
-  final Controller controller = Controller();
-  
   static const path = '/auth-landing';
-  
-  AuthLandingPage({Key? key}) : super(key: key);
-  
-  @override
-  _AuthLandingPageState createState() => _AuthLandingPageState();
+
+  AuthLandingPage() : super(path, child: _AuthLandingPageState());
 }
 
 class _AuthLandingPageState extends NyState<AuthLandingPage> {
-
-  @override
-  init() async {
-    super.init();
-    
-  }
-  
-  @override
-  void dispose() {
-    super.dispose();
-  }
   
   @override
   Widget build(BuildContext context) {

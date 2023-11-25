@@ -1,3 +1,10 @@
+# 1.0.0 - 2023-11-25
+
+* Add stub for controllers, forgot password, login and register
+* Update stubs
+* Update README
+* Pubspec dependency updates
+
 ## 0.1.0 - 2023-11-04
 
 * Update stubs

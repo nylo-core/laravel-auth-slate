@@ -23,5 +23,4 @@ class LaravelAuthResponse extends Model {
     "token": token
   };
 }
-
 ''';

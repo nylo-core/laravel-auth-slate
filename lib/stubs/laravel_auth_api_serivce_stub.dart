@@ -1,14 +1,24 @@
 String stubLaravelAuthApiService() => '''
 import 'package:flutter/material.dart';
+import '/config/decoders.dart';
 import '/app/models/laravel_auth_response.dart';
-import '/app/networking/dio/base_api_service.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-class LaravelAuthApiService extends BaseApiService {
-  LaravelAuthApiService({BuildContext? buildContext}) : super(buildContext);
+/*
+|--------------------------------------------------------------------------
+| LaravelAuthApiService
+| -------------------------------------------------------------------------
+| API Service for Laravel Auth - Login, Register, Forgot Password
+| Ensure you have installed this package https://github.com/nylo-core/laravel-nylo-auth
+|
+| Learn more https://nylo.dev/docs/5.x/networking
+|--------------------------------------------------------------------------
+*/
+class LaravelAuthApiService extends NyApiService {
+  LaravelAuthApiService({BuildContext? buildContext}) : super(buildContext, decoders: modelDecoders);
 
   @override
-  String get baseUrl => '\${getEnv('API_BASE_URL')}/app/v1';
+  String get baseUrl => '\${getEnv('APP_URL')}/app/v1';
 
   /// Login
   Future<LaravelAuthResponse?> login(String email, String password) async => await network<LaravelAuthResponse>(
@@ -26,9 +36,22 @@ class LaravelAuthApiService extends BaseApiService {
     }),
   );
 
+  /// Forgot Password
+  Future<bool> forgotPassword(String email) async => await network(
+        request: (request) => request.post("/forgot-password", data: {
+          "email": email
+        }),
+        handleSuccess: (response) {
+          if (response.statusCode != 200) return false;
+          return response.data['status'] == 200;
+        }
+    ) ?? false;
+
   @override
-  displayError(DioException dioError, BuildContext context) {
-    dioError.message.dump();
+  displayError(DioException exception, BuildContext context) {
+    Map<String, dynamic> data = exception.response?.data;
+    if (!data.containsKey('message')) return;
+    showToastNotification(context, title: "Error", description: data['message'], style: ToastNotificationStyleType.DANGER);
   }
 }
 ''';

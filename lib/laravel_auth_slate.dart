@@ -1,7 +1,10 @@
 library laravel_auth_slate;
 
-import 'package:laravel_auth_slate/stubs/auth_landing_stub.dart';
-
+import '/stubs/auth_landing_stub.dart';
+import '/stubs/forgot_password_controller_stub.dart';
+import '/stubs/forgot_password_stub.dart';
+import '/stubs/login_controller_stub.dart';
+import '/stubs/register_controller_stub.dart';
 import '/stubs/laravel_auth_response.dart';
 import '/stubs/auth_user_stub.dart';
 import '/stubs/dashboard_stub.dart';
@@ -65,10 +68,39 @@ List<NyTemplate> run() => [
       ),
 
       NyTemplate(
-        name: "dashboard_page",
+        name: "forgot_password_page",
         saveTo: pagesFolder,
         pluginsRequired: ["nylo_framework"],
-        stub: stubDashboard(),
+        stub: stubForgotPassword(),
+      ),
+
+      NyTemplate(
+          name: "dashboard_page",
+          saveTo: pagesFolder,
+          pluginsRequired: ["nylo_framework"],
+          stub: stubDashboard(),
+          options: {"is_auth_page": true}),
+
+      /// CONTROLLERS
+      NyTemplate(
+        name: "login_controller",
+        saveTo: controllersFolder,
+        pluginsRequired: ["nylo_framework"],
+        stub: stubLoginController(),
+      ),
+
+      NyTemplate(
+        name: "register_controller",
+        saveTo: controllersFolder,
+        pluginsRequired: ["nylo_framework"],
+        stub: stubRegisterController(),
+      ),
+
+      NyTemplate(
+        name: "forgot_password_controller",
+        saveTo: controllersFolder,
+        pluginsRequired: ["nylo_framework"],
+        stub: stubForgotPasswordController(),
       ),
 
       /// API SERVICES
