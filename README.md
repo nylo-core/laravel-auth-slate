@@ -58,7 +58,7 @@ appRouter() => nyRoutes((router) {
 });
 ```
 
-### Laravel project
+## Laravel project
 
 Install the Laravel composer package [laravel-nylo-auth](https://github.com/nylo-core/laravel-nylo-auth).
 
