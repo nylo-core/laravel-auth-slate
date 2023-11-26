@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^1.0.0
+  laravel_auth_slate: ^1.0.1
 ```
 
 ## Usage
@@ -58,7 +58,9 @@ appRouter() => nyRoutes((router) {
 });
 ```
 
-### Install the Laravel composer package
+### Laravel project
+
+Install the Laravel composer package [laravel-nylo-auth](https://github.com/nylo-core/laravel-nylo-auth).
 
 You can install the package via composer:
 
@@ -66,11 +68,23 @@ You can install the package via composer:
 composer require nylo/laravel-nylo-auth
 ```
 
-You can publish and run the migrations with:
+You can publish with:
 
 ``` bash
 php artisan vendor:publish --provider="Nylo\LaravelNyloAuth\LaravelNyloAuthServiceProvider"
 ```
+
+## Update your .env file
+
+In your **Nylo** project, navigate to your `.env` file and update the following line:
+
+``` bash
+APP_URL="https://nylo.dev" // old url
+
+APP_URL="http://examplelaravel.test" // your laravel project url
+```
+
+Now, build and run the app and try to login, register and use the forgotten password page.
 
 Check out the Laravel package [here](https://github.com/nylo-core/laravel-nylo-auth) for more information.
 
