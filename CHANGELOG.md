@@ -1,3 +1,8 @@
+# 1.0.3 - 2023-12-01
+
+* Update the pubspec.yaml
+* Update the README
+
 # 1.0.2 - 2023-11-26
 
 * Update the README

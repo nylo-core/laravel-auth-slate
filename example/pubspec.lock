@@ -211,7 +211,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.1"
+    version: "1.0.3"
   matcher:
     dependency: transitive
     description:
@@ -240,10 +240,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: "5e7fc756c54e0b802fa502a3d33b3e286fdb1f8df442301818f409d81882ddb5"
+      sha256: "193b777f1ca267842f53c8242929fa12f09205c4c8cc292884edd0f366e7446e"
       url: "https://pub.dev"
     source: hosted
-    version: "5.17.0"
+    version: "5.18.0"
   page_transition:
     dependency: transitive
     description:
