@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^1.0.3
+  laravel_auth_slate: ^1.0.4
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ dart run laravel_auth_slate:main publish:all
 With Nylo
 
 ``` bash 
-dart run nylo_framework:main publish:slate laravel_auth_slate
+metro publish:slate laravel_auth_slate
 ```
 
 Step 2: Go to `config/events.dart` and update the following event:

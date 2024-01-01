@@ -1,33 +1,39 @@
-# 1.0.3 - 2023-12-01
+# [1.0.4] - 2024-01-01
+
+* Update license date
+* Update the pubspec.yaml
+* Add GitHub actions
+
+# [1.0.3] - 2023-12-01
 
 * Update the pubspec.yaml
 * Update the README
 
-# 1.0.2 - 2023-11-26
+# [1.0.2] - 2023-11-26
 
 * Update the README
 
-# 1.0.1 - 2023-11-26
+# [1.0.1] - 2023-11-26
 
 * Update the README
 
-# 1.0.0 - 2023-11-25
+# [1.0.0] - 2023-11-25
 
 * Add stub for controllers, forgot password, login and register
 * Update stubs
 * Update README
 * Pubspec dependency updates
 
-## 0.1.0 - 2023-11-04
+## [0.1.0] - 2023-11-04
 
 * Update stubs
 * Update Readme
 
-## 0.0.2
+## [0.0.2]
 
 * laravel_auth_response
 
-## 0.0.1
+## [0.0.1]
 
 * Initial release
 * Tweak layouts
