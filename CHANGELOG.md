@@ -1,3 +1,7 @@
+# [1.0.5] - 2024-01-15
+
+* Update the pubspec.yaml
+
 # [1.0.4] - 2024-01-01
 
 * Update license date
@@ -29,11 +33,11 @@
 * Update stubs
 * Update Readme
 
-## [0.0.2]
+## [0.0.2] - 2023-11-04
 
 * laravel_auth_response
 
-## [0.0.1]
+## [0.0.1] - 2023-11-04
 
 * Initial release
 * Tweak layouts
