@@ -1,3 +1,7 @@
+# [1.0.10] - 2024-02-03
+
+* Update the pubspec.yaml
+
 # [1.0.9] - 2024-02-01
 
 * Update the pubspec.yaml
