@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: args
-      sha256: eef6c46b622e0494a36c5a12d10d77fb4e855501a91c1b9ef9339326e58f0596
+      sha256: "7cf60b9f0cc88203c5a190b4cd62a99feea42759a7fa695010eb5de1c0b2252a"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.2"
+    version: "2.5.0"
   async:
     dependency: transitive
     description:
@@ -61,10 +61,10 @@ packages:
     dependency: transitive
     description:
       name: dio
-      sha256: "0978e9a3e45305a80a7210dbeaf79d6ee8bee33f70c8e542dc654c952070217f"
+      sha256: "11e40df547d418cc0c4900a9318b26304e665da6fa4755399a9ff9efd09034b5"
       url: "https://pub.dev"
     source: hosted
-    version: "5.4.2+1"
+    version: "5.4.3+1"
   equatable:
     dependency: transitive
     description:
@@ -227,7 +227,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.20"
+    version: "1.0.21"
   leak_tracker:
     dependency: transitive
     description:
@@ -280,10 +280,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: "9662d056297433385d570146b92f208e941d1fca795d5abc4f36dcacaf57bdd1"
+      sha256: e85032ddfdd3df8d47391c46af66867ea57b630a4ee823a226a913fe67e96d02
       url: "https://pub.dev"
     source: hosted
-    version: "5.63.0"
+    version: "5.64.0"
   page_transition:
     dependency: transitive
     description:

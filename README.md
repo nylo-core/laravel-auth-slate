@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^1.0.19
+  laravel_auth_slate: ^1.0.21
 ```
 
 ## Usage
