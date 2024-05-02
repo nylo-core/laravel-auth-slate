@@ -1,6 +1,6 @@
 name: laravel_auth_slate
 description: Laravel authentication package, creates a login, signup and api service using Sanctum.
-version: 1.0.22
+version: 1.0.23
 homepage: https://nylo.dev
 repository: https://github.com/nylo-core/laravel_auth_slate
 issue_tracker: https://github.com/nylo-core/laravel_auth_slate/issues
@@ -18,7 +18,7 @@ environment:
 
 dependencies:
   args: ^2.5.0
-  nylo_support: ^5.66.0
+  nylo_support: ^5.68.0
   flutter:
     sdk: flutter
 
