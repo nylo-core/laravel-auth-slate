@@ -77,10 +77,10 @@ packages:
     dependency: transitive
     description:
       name: error_stack
-      sha256: "44f101cbe1c734f8111e887dda17b4edca2f99978266586529002b54f4a23973"
+      sha256: ade94b3bb741b1f5bddc60a1d47d7fd6d01e70309b7c0d3f15bdc5e2fa7dde99
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.2"
+    version: "1.3.4"
   fake_async:
     dependency: transitive
     description:
@@ -127,10 +127,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_secure_storage
-      sha256: "8496a89eea74e23f92581885f876455d9d460e71201405dffe5f55dfe1155864"
+      sha256: "165164745e6afb5c0e3e3fcc72a012fb9e58496fb26ffb92cf22e16a821e85d0"
       url: "https://pub.dev"
     source: hosted
-    version: "9.2.1"
+    version: "9.2.2"
   flutter_secure_storage_linux:
     dependency: transitive
     description:
@@ -143,10 +143,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_secure_storage_macos
-      sha256: b768a7dab26d6186b68e2831b3104f8968154f0f4fdbf66e7c2dd7bdf299daaf
+      sha256: "1693ab11121a5f925bbea0be725abfcfbbcf36c1e29e571f84a0c0f436147a81"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.1"
+    version: "3.1.2"
   flutter_secure_storage_platform_interface:
     dependency: transitive
     description:
@@ -235,7 +235,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.24"
+    version: "1.0.25"
   leak_tracker:
     dependency: transitive
     description:
@@ -288,10 +288,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: a89496f38808d32d22a52f412cdbe73409d898e9f69597b635c4edb8f5386653
+      sha256: "4aadd17cc4e8b6ac8d15631c535279beb8036526bd70ded6af6d4b3e4e414e3a"
       url: "https://pub.dev"
     source: hosted
-    version: "5.69.3"
+    version: "5.69.5"
   page_transition:
     dependency: transitive
     description:
