@@ -1,3 +1,8 @@
+# [1.1.0] - 2024-06-06
+
+* Fix `register_controller` and `forgot_password_controller` to import nylo_framework.
+* Update the pubspec.yaml
+
 # [1.0.25] - 2024-05-25
 
 * Update the pubspec.yaml
