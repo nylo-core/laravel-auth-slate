@@ -1,3 +1,4 @@
+/// DashboardPage stub
 String stubDashboard() => '''
 import 'package:flutter/material.dart';
 import '/resources/pages/auth_landing_page.dart';

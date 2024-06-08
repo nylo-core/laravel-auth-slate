@@ -1,3 +1,4 @@
+/// AuthLandingPage stub
 String stubAuthLanding() => '''
 import 'package:flutter/material.dart';
 import '/resources/widgets/logo_widget.dart';

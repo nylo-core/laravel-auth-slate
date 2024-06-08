@@ -1,3 +1,4 @@
+/// AuthUser Model.
 String stubAuthUser() => '''
 import 'package:nylo_framework/nylo_framework.dart';
 

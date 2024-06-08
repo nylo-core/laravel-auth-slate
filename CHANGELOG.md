@@ -1,3 +1,7 @@
+# [1.1.1] - 2024-06-08
+
+* Add docs to `auth_landing_stub.dart`, `auth_user_stub.dart` and `dashboard_stub.dart`
+
 # [1.1.0] - 2024-06-06
 
 * Fix `register_controller` and `forgot_password_controller` to import nylo_framework.
