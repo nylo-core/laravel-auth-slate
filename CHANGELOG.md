@@ -1,3 +1,7 @@
+# [1.1.2] - 2024-06-10
+
+* Add funding.yml, update README and pubspec.yaml
+
 # [1.1.1] - 2024-06-08
 
 * Add docs to `auth_landing_stub.dart`, `auth_user_stub.dart` and `dashboard_stub.dart`

@@ -1,4 +1,4 @@
-# Laravel Auth Slate
+# Laravel Authentication Slate
 
 Scaffolds an authentication UI in your [Nylo](https://nylo.dev) project.
 
@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 ``` dart 
 dependencies:
   ...
-  laravel_auth_slate: ^1.1.1
+  laravel_auth_slate: ^1.1.2
 ```
 
 ## Usage
