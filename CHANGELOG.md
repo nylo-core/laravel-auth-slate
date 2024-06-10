@@ -1,3 +1,7 @@
+# [1.1.3] - 2024-06-10
+
+* Update readme
+
 # [1.1.2] - 2024-06-10
 
 * Add funding.yml, update README and pubspec.yaml
