@@ -77,10 +77,10 @@ packages:
     dependency: transitive
     description:
       name: error_stack
-      sha256: "586ffb16c6db5a19cf0872739828b521dab5ba156b0c9f7eade85c4fec706ca2"
+      sha256: cb189baf478bb896f204485fe6633728eacde26aa944ba9744e501f8a84901a4
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.0"
+    version: "1.7.1"
   fake_async:
     dependency: transitive
     description:
@@ -235,7 +235,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.1.4"
+    version: "1.1.5"
   leak_tracker:
     dependency: transitive
     description:
@@ -288,10 +288,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: d722e3d1e4a8353c20561cba4d45b735a2d010b5f5c132691266d9725bce9f8e
+      sha256: "1d7202461d501031491b1a614bce288ab8becf72d52c8ab9a47e8096dbfc12ba"
       url: "https://pub.dev"
     source: hosted
-    version: "5.73.1"
+    version: "5.75.3"
   page_transition:
     dependency: transitive
     description:
