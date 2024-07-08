@@ -1,3 +1,8 @@
+# [1.2.0] - 2024-07-08
+
+* New UI for stubs
+* Pubspec.yaml update
+ 
 # [1.1.6] - 2024-07-06
 
 * Pubspec.yaml update

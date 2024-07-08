@@ -1,7 +1,6 @@
 /// DashboardPage stub
 String stubDashboard() => '''
 import 'package:flutter/material.dart';
-import '/resources/pages/auth_landing_page.dart';
 import '/app/events/logout_event.dart';
 import '/app/models/auth_user.dart';
 import '/app/networking/laravel_api_service.dart';

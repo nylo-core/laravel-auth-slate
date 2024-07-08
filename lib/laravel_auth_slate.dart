@@ -1,6 +1,8 @@
 library laravel_auth_slate;
 
-import '/stubs/auth_landing_stub.dart';
+import '/stubs/login_form.dart';
+import '/stubs/register_form.dart';
+import '/stubs/landing_stub.dart';
 import '/stubs/forgot_password_controller_stub.dart';
 import '/stubs/forgot_password_stub.dart';
 import '/stubs/login_controller_stub.dart';
@@ -44,10 +46,10 @@ List<NyTemplate> run() => [
 
       /// PAGES
       NyTemplate(
-        name: "auth_landing_page",
+        name: "landing_page",
         saveTo: pagesFolder,
         pluginsRequired: ["nylo_framework"],
-        stub: stubAuthLanding(),
+        stub: stubLandingPage(),
       ),
 
       NyTemplate(
@@ -123,7 +125,20 @@ List<NyTemplate> run() => [
         stub: stubLaravelAuthEvent(),
       ),
 
-      /// add more templates...
+      /// FORMS
+      NyTemplate(
+        name: "register_form",
+        saveTo: formsFolder,
+        pluginsRequired: [],
+        stub: stubRegisterForm(),
+      ),
+
+      NyTemplate(
+        name: "login_form",
+        saveTo: formsFolder,
+        pluginsRequired: [],
+        stub: stubLoginForm(),
+      ),
     ];
 
 /*
