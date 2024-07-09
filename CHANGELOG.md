@@ -1,3 +1,7 @@
+# [1.2.1] - 2024-07-09
+
+* Fix image path
+
 # [1.2.0] - 2024-07-08
 
 * New UI for stubs

@@ -155,7 +155,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
       return AnimatedSwitcher(
         duration: Duration(seconds: 1),
         child: Image.asset(
-          'packages/ny_auth_slate/images/\${widget.images[_currentIndex]}',
+          'packages/laravel_auth_slate/images/\${widget.images[_currentIndex]}',
           key: ValueKey<String>(widget.images[_currentIndex]),
           fit: BoxFit.cover,
           width: double.infinity,

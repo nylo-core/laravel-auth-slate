@@ -283,7 +283,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.2.0"
+    version: "1.2.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -336,10 +336,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: "3bb78fd7eb42c5ccb7ab8e69f481a77f623aa472708fba4744e473b6c42fac43"
+      sha256: "85abb05da3a2febbe75bf0709d193e099a131e1c7239ad95c0930896606f83fd"
       url: "https://pub.dev"
     source: hosted
-    version: "5.81.0"
+    version: "5.81.1"
   page_transition:
     dependency: transitive
     description:
