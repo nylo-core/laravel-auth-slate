@@ -46,14 +46,14 @@ SyncAuthToBackpackEvent: SyncAuthToBackpackEvent<LaravelAuthResponse>(),
 
 ### Routes
 
-The initial route should be `AuthLandingPage`. 
+The initial route should be `LandingPage`. 
 
 Go to your `routes/router.dart` file and update the following:
 
 ``` bash
 appRouter() => nyRoutes((router) {
  ...
- router.route(AuthLandingPage.path, (context) => AuthLandingPage(), initialRoute: true); // set to initial route
+ router.route(LandingPage.path, (context) => LandingPage(), initialRoute: true); // set to initial route
  
 });
 ```
