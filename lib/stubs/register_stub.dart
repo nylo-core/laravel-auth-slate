@@ -49,9 +49,9 @@ class _RegisterPageState extends NyState<RegisterPage> {
                     form.submit(onSuccess: (data) {
                       lockRelease('register', perform: () async {
                         await widget.controller.register(
-                            name: data['Name'], 
-                            email: data['Email'], 
-                            password: data['Password'],
+                            data['Name'], 
+                            data['Email'], 
+                            data['Password'],
                         );
                       });
                     });

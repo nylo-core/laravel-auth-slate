@@ -14,8 +14,8 @@ class RegisterController extends Controller {
   }
 
   /// Register the user
-  register(String email, String password) async {
-    LaravelAuthResponse? laravelAuthResponse = await api<LaravelAuthApiService>((request) => request.register(email, password), context: context);
+  register(String name, String email, String password) async {
+    LaravelAuthResponse? laravelAuthResponse = await api<LaravelAuthApiService>((request) => request.register(name, email, password), context: context);
       if (laravelAuthResponse?.status != 200) {
         showToastOops(description: laravelAuthResponse?.message ?? "");
         return;

@@ -1,3 +1,7 @@
+# [1.2.3] - 2024-07-26
+
+* Fix register controller and stub
+
 # [1.2.2] - 2024-07-26
 
 * Fix update login and register pages
