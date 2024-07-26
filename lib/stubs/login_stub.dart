@@ -44,7 +44,7 @@ class _LoginPageState extends NyState<LoginPage> {
                   onPressed: () {
                     NyForm.submit("login", onSuccess: (data) {
                       lockRelease('login', perform: () async {
-                        await widget.controller.login(data['email'], data['password']);
+                        await widget.controller.login(data['Email'], data['Password']);
                       });
                     });
                   }

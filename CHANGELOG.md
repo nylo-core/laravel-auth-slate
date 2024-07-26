@@ -1,3 +1,7 @@
+# [1.2.2] - 2024-07-26
+
+* Fix update login and register pages
+
 # [1.2.1] - 2024-07-09
 
 * Fix image path

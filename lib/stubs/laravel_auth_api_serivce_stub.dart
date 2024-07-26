@@ -4,21 +4,17 @@ import '/config/decoders.dart';
 import '/app/models/laravel_auth_response.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-/*
-|--------------------------------------------------------------------------
-| LaravelAuthApiService
+/* LaravelAuthApiService
 | -------------------------------------------------------------------------
 | API Service for Laravel Auth - Login, Register, Forgot Password
-| Ensure you have installed this package https://github.com/nylo-core/laravel-nylo-auth
-|
-| Learn more https://nylo.dev/docs/5.x/networking
-|--------------------------------------------------------------------------
-*/
+| Learn more https://nylo.dev/docs/5.20.0/networking
+|-------------------------------------------------------------------------- */
+
 class LaravelAuthApiService extends NyApiService {
   LaravelAuthApiService({BuildContext? buildContext}) : super(buildContext, decoders: modelDecoders);
 
   @override
-  String get baseUrl => '\${getEnv('APP_URL')}/app/v1';
+  String get baseUrl => '\${getEnv('API_BASE_URL')}/app/v1';
 
   /// Login
   Future<LaravelAuthResponse?> login(String email, String password) async => await network<LaravelAuthResponse>(
@@ -29,8 +25,9 @@ class LaravelAuthApiService extends NyApiService {
   );
 
   /// Register
-  Future<LaravelAuthResponse?> register(String email, String password) async => await network<LaravelAuthResponse>(
+  Future<LaravelAuthResponse?> register({required String name, required String email, required String password}) async => await network<LaravelAuthResponse>(
     request: (request) => request.post("/register", data: {
+      "name": name,
       "email": email,
       "password": password
     }),

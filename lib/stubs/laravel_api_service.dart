@@ -5,21 +5,17 @@ import '/app/models/laravel_auth_response.dart';
 import '/app/models/auth_user.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-/*
-|--------------------------------------------------------------------------
-| LaravelApiService
+/* LaravelApiService
 | -------------------------------------------------------------------------
 | API Service for your authenticated users
-| Ensure you have installed this package https://github.com/nylo-core/laravel-nylo-auth
-|
-| Learn more https://nylo.dev/docs/5.x/networking
-|--------------------------------------------------------------------------
-*/
+| Learn more https://nylo.dev/docs/5.20.0/networking
+|-------------------------------------------------------------------------- */
+
 class LaravelApiService extends NyApiService {
   LaravelApiService({BuildContext? buildContext}) : super(buildContext, decoders: modelDecoders);
 
   @override
-  String get baseUrl => '\${getEnv('APP_URL')}/app/v1';
+  String get baseUrl => '\${getEnv('API_BASE_URL')}/app/v1';
 
   String get bearerToken => Auth.user<LaravelAuthResponse>()?.token ?? "";
 
